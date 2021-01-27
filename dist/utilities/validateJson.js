@@ -17,12 +17,14 @@ const validateJson = (req) => {
         });
         return {
             code: 0,
+            status: 'fail',
             message: 'Error en el JSON',
             error
         };
     }
     return {
         code: 1,
+        status: 'success',
         message: 'Success'
     };
 };

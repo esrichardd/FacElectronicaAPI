@@ -17,11 +17,11 @@ const getDataBilling = async (req: Request, res: Response, next: NextFunction) =
     const returnValidateJson = validateJson(req);
 
     if (!returnValidateJson.code) {
-        return res.status(200).json({ 0: returnValidateJson });
+        return res.status(200).json({ status: returnValidateJson.status, data: { message: returnValidateJson.message } });
     }
 
     const responseSendToSQS: any = await sendToSQS(req.body);
-    return res.status(200).json({ 0: returnValidateJson, 1: responseSendToSQS });
+    return res.status(200).json({ status: returnValidateJson.status, data: { responseSendToSQS } });
 };
 
 export default { getDataBilling, getTestingRoute };

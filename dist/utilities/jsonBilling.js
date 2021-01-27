@@ -23,10 +23,7 @@ exports.jsonBilling = {
         person_name: { type: 'string' },
         document: { type: 'string' },
         date: { type: 'string' },
-        sequential_key: { type: 'string' },
-        sequential_date_start: { type: 'string' },
         city: { type: 'string' },
-        sequential_start: { type: 'string' },
         sequential: { type: 'string' },
         items: { type: 'array' },
         amount_before_tax: { type: 'string' },
@@ -36,8 +33,6 @@ exports.jsonBilling = {
         location_phone: { type: 'object' },
         iva_base: { type: 'string' },
         invoice_uuid: { type: 'string' },
-        sequential_end: { type: 'string' },
-        dian_resolution: { type: 'string' }
     },
     required: [
         'location_address',
@@ -49,10 +44,7 @@ exports.jsonBilling = {
         'person_name',
         'document',
         'date',
-        'sequential_key',
-        'sequential_date_start',
         'city',
-        'sequential_start',
         'sequential',
         'items',
         'amount_before_tax',
@@ -62,8 +54,6 @@ exports.jsonBilling = {
         'location_phone',
         'iva_base',
         'invoice_uuid',
-        'sequential_end',
-        'dian_resolution'
     ]
 };
 //# sourceMappingURL=jsonBilling.js.map

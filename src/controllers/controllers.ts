@@ -17,7 +17,7 @@ const getDataBilling = async (req: Request, res: Response, next: NextFunction) =
     const returnValidateJson = validateJson(req);
 
     if (!returnValidateJson.code) {
-        return res.status(200).json({ status: returnValidateJson.status, data: { message: returnValidateJson.message } });
+        return res.status(200).json({ status: returnValidateJson.status, data: { message: returnValidateJson.message, error: returnValidateJson.error } });
     }
 
     const responseSendToSQS: any = await sendToSQS(req.body);

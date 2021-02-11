@@ -26,7 +26,7 @@ const getDataBilling = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
     logging_1.default.info(NAMESPACE, 'Send data to getDataBilling', `[REQUEST DATA] - ${req.body}`);
     const returnValidateJson = validateJson_1.default(req);
     if (!returnValidateJson.code) {
-        return res.status(200).json({ status: returnValidateJson.status, data: { message: returnValidateJson.message } });
+        return res.status(200).json({ status: returnValidateJson.status, data: { message: returnValidateJson.message, error: returnValidateJson.error } });
     }
     const responseSendToSQS = yield sendToSQS_1.default(req.body);
     return res.status(200).json({ status: returnValidateJson.status, data: { responseSendToSQS } });
